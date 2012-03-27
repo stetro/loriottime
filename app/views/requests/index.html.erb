@@ -1,0 +1,33 @@
+<%@title="Anfragen"%><h1>Anfragen</h1>
+<%if @requests.empty?%>
+<p>Es befinden sich keine Anfragen in der Liste. </p>
+<%else%>
+<table>
+  <tr>
+    <th>Status</th>
+    <th>Person</th>
+
+    <th>Auftritt / Phase</th>
+    <th>Plätze</th>
+    <th>Bezahlt</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @requests.each do |request| %>
+  <tr>
+    <td></td>
+    <td><%= person_name request.person_id %></td>
+    <td><%= get_request_time request.phase_id , request.event_id %></td>
+    <td><%= request.seat_count %></td>
+    <td><%= get_request_payed request.payed %></td>
+    <td><%= link_to 'Detailansicht', request %></td>
+    <td><%= link_to 'Bearbeiten', edit_request_path(request) %></td>
+  </tr>
+<% end %>
+</table>
+<%end%>
+<br />
+<div id="controll">
+<%= link_to 'Neue Anfrage', new_request_path %>
+</div>

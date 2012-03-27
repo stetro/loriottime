@@ -1,0 +1,58 @@
+<%@title="Anfragen"%>
+<h1>Anfrage von <%=person_name @request.person_id %></h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b>
+  
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= @request.person_id %>
+</p>
+
+<p>
+  <b>Phase</b>
+  <%= @request.phase_id %>
+</p>
+
+<p>
+  <b>Auftritt</b>
+  <%= @request.event_id %>
+</p>
+
+
+
+
+<p>
+  <b>Sitz:</b>
+  <%= @request.seat %>
+</p>
+
+<p>
+  <b>Plätze reserviert:</b> 
+  <%= @request.seat_count %>
+</p>
+
+<p>
+  <b>Bezahlt</b>
+  <%= @request.payed %>
+</p>
+
+
+<p>
+  <b>Info:</b>
+  <%= @request.info %>
+</p>
+
+<div id="controll">
+<%= link_to 'Bearbeiten', edit_request_path(@request) %> |
+<%= request_back_link %>
+</div>
+
+
+<p>
+	<%= button_to "Anfrage Löschen", @request, :method=>:delete, :class=>:destroy %>
+</p>
+

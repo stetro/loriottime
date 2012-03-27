@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  status: false
+  person_id: 1
+  phase_id: 1
+  event_id: 1
+  seat: 1
+  seat_count: 1
+  payed: false
+  seat_start: 1
+  info: MyString
+
+two:
+  status: false
+  person_id: 1
+  phase_id: 1
+  event_id: 1
+  seat: 1
+  seat_count: 1
+  payed: false
+  seat_start: 1
+  info: MyString

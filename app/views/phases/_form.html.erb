@@ -1,0 +1,21 @@
+<%= form_for(@phase) do |f| %>
+  <% if @phase.errors.any? %>
+    <div id="error_explanation" class="message">
+      <strong><%= @phase.errors.count %> Fehler ist aufgetreten:</strong>
+
+      <ul>
+      <% @phase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :season ,"Jahreszeit"%><br />
+    <%= f.select :season,seasons,:prompt => "Jahreszeit angeben" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Phase abspeichern"%>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LoriotTime - <%= @title || "Unbenannt" %></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!-- <%=javascript_include_tag :defaults%> -->
+
+<%= stylesheet_link_tag 'reset' %>
+<%= stylesheet_link_tag 'text' %>
+<%= stylesheet_link_tag '960' %>
+<%= stylesheet_link_tag 'style' %>
+
+<link href="http://fonts.googleapis.com/css?family=Gudea" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<div id="back_div">&nbsp;</div>
+<header class="container_12">
+	<div class="grid_5"><div id="logo">Loriot<span>Time</span></div></div>
+	<div class="grid_7">&nbsp;</div>
+</header>
+<div class="container_12">
+	<nav class="grid_2" id="navigation">
+		<%=render "layouts/menu.html.erb"%>
+	</nav>
+	<div class="grid_10" id="content">
+	<%=yield%>
+	</div>
+</div>
+
+
+<footer class="container_12">
+	<div class="grid_8" id="footer_info">
+		Hawerländer Kunststücke - LoriotTime
+	</div>
+	<div class="grid_4" id="footer_links">
+		Impressum | Kontakt | Datenschutz
+	</div>
+</footer>
+</body>
+</html>

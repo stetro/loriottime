@@ -1,0 +1,41 @@
+<% @title = "Personen"%> <h1>Personen</h1>
+<div id="controll">
+	<%= link_to 'Neue Person anlegen', new_person_path %>
+</div>
+<% if notice != nil%>
+<p id="notice" class="message">
+	<%= notice %>
+</p>
+<%end%>
+<%if @people.empty?%>
+<div>
+	Es befinden sich keine Personen in der Liste.
+</div>
+<%else%>
+<table>
+	<tr>
+		<th>Name</th>
+		<!-- <th>E-Mail Adresse</th> -->
+		<th>Telefon</th>
+		<th>Stadt</th>
+		<!-- <th>Adresse</th> -->
+		<th>Weitere Informationen</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @people.each do |person| %>
+	<tr>
+		<td><%= person.name %> <%= person.surname %></td>
+		<!-- <td><%= person.mail %></td> -->
+		<td><%= person.phone %></td>
+		<td><%= person.city %></td>
+		<!-- <td><%= person.address %></td> -->
+		<td><%= truncate(person.info, :length => 35) %></td>
+		<td><%= link_to 'Weitere Details', person %></td>
+		<td><%= link_to 'Bearbeiten', edit_person_path(person) %></td>
+	</tr>
+	<% end %>
+</table>
+<% end %>
+<br />
+<%= image_tag "back.jpg",:size =>"10x10"%> 

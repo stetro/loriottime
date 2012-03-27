@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start: 2012-03-23 11:20:53
+  phase_id: 1
+  info: MyText
+
+two:
+  start: 2012-03-23 11:20:53
+  phase_id: 1
+  info: MyText

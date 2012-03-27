@@ -1,0 +1,29 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation" class="message">
+      <h2><%=@event.errors.count%> Fehler sind/ist aufgetreten!:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start,"Beginn der Vorstellung" %><br />
+    <%= f.datetime_select :start ,{:default => { :hour => 20,:minute=>00}, :start_year => DateTime.now.strftime("%Y").to_i}%>
+  </div>
+  <div class="field">
+    <%= f.label :phase_id,"Phase" %><br />
+    <%= get_phase_selection f, @phase %>
+  </div>
+  <div class="field">
+    <%= f.label :info ,"Weitere Informationen"%><br />
+    <%= f.text_area :info, :rows => 4 %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Auftritt speichen"%>
+  </div>
+<% end %>

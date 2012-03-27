@@ -1,0 +1,34 @@
+<% @title = "Auftritte"%><h1>Listung aller Auftritte</h1>
+<% if notice != nil%>
+<p id="notice" class="message">
+	<%= notice %>
+</p>
+<%end%>
+<%if @events.empty?%>
+<div>
+	Es befinden sich keine Auftritte in der Liste.
+</div>
+<%else%>
+<table>
+	<tr>
+		<th>Veranstaltungsbeginn</th>
+		<th>Phase</th>
+		<th>Weitere Informationen</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @events.each do |event| %>
+	<tr>
+		<td><%= get_request_time event.phase_id,event.id %></td>
+		<td><%= get_season event.phase_id %></td>
+		<td><%= event.info %></td>
+		<td><%= link_to 'Anzeigen', event %></td>
+		<td><%= link_to 'Bearbeiten', edit_event_path(event) %></td>
+	</tr>
+	<% end %>
+</table>
+<%end%>
+<br />
+<div id="controll">
+	<%= link_to 'Neuer Auftritt', new_event_path %>
+</div>

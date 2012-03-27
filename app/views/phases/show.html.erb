@@ -1,0 +1,15 @@
+<%@title = "Phasen"%>
+<h2>Phase :</h2>
+<p>
+	<b>Jahreszeit: </b>
+	<%= @phase.season %>
+</p>
+
+<p>
+	Achtung ! Hiermit werden auch alle beinhaltenden Auftritte gelöscht ! (Anfragen bleiben bestehen)
+	<%=button_to "Phase Löschen",@phase,:method=>:delete,:class=>:destroy	%>
+</p>
+<div id="controll">
+	<%= link_to 'Bearbeiten', edit_phase_path(@phase) %> |
+	<%= phase_back_link %>
+</div>

@@ -1,0 +1,8 @@
+<h1>Person "<%=person_name @person.id%>" bearbeiten</h1>
+
+<%= render 'form' %>
+<div id="controll">
+	<%= link_to 'Im Detail anzeigen', @person %> |
+	<%= people_back_link %>
+</div>
+

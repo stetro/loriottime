@@ -1,0 +1,19 @@
+<p>
+	<b>Start:</b>
+	<%= get_request_time @event.phase_id,@event.id %>
+</p>
+<p>
+	<b>Phase:</b>
+	<%= get_season @event.phase_id %>
+</p>
+<p>
+	<b>Info:</b>
+	<%= @event.info %>
+</p>
+<p>
+	<%= button_to "Auftritt Löschen",event_path(@event),:method=>:delete,:class=>:destroy%>
+</p>
+<div id="controll">
+	<%= link_to 'Bearbeiten', edit_event_path(@event) %> |
+	<%= event_back_link %>
+</div>

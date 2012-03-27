@@ -1,0 +1,27 @@
+<%@title = "Phasen"%><h1>Phasen</h1>
+<% if notice != nil%>
+<p id="notice" class="message">
+	<%= notice %>
+</p>
+<%end%>
+<%if @phases.empty?%>
+	<div>Es befinden sich keine Phasen in der Liste.</div>
+<%else%>
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Jahreszeit</th>
+		<th></th>
+	</tr>
+	<% @phases.each do |phase| %>
+	<tr>
+		<td><%=phase.id%></td>
+		<td><%= phase.season %></td>
+		<td><%= link_to 'Bearbeiten', edit_phase_path(phase) %></td>
+	</tr>
+	<% end %>
+</table>
+<% end %>
+<div id="controll">
+	<%= link_to 'Neue Phase anlegen', new_phase_path %>
+</div>

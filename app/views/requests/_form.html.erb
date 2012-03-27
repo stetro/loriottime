@@ -1,0 +1,50 @@
+<%= form_for(@request) do |f| %>
+<% if @request.errors.any? %>
+<div id="error_explanation" class="message">
+	<h2><%= @request.errors.count %> Fehler sind/ist aufgetreten:</h2>
+	<ul>
+		<% @request.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %> 
+<div class="field">
+	<%= f.label :person_id, "Person auswählen" %>
+	<br />
+	<%= get_people_selection(f, @people)%>
+</div>
+<div class="field">
+	<%= f.label :phase_id, "Phase - In welcher Phase sollen Karten reserviert werden?" %>
+	<br />
+	<%= get_phase_selection(f, @phases)%>
+</div>
+<div class="field">
+	<%= f.label :event_id,"Auftritt beziehen" %>
+	<br />
+	<%= get_events_selection(f,@events) %>
+</div>
+<div class="field">
+	<%= f.label :seat, "Sitzposition (start) :" %>
+	<%= f.select :seat,1..32 ,:include_blank => 'Noch nicht reserviert'%>
+</div>
+<div class="field">
+	<%= f.label :seat_count,"Anzahl der Plätze :" %>
+
+	<%= f.select :seat_count,1..32,:include_blank => 'Noch nicht reserviert' %>
+</div>
+<div class="field">
+	<%= f.label :payed ,"Bezahlt : "%>
+	<%= f.check_box :payed %>
+</div>
+<div class="field">
+	<%= f.label :info ,"Weitere Informationen über diese Anfrage: "%>
+	<br />
+	<%= f.text_area :info,:rows=>5 %>
+</div>
+<div class="actions">
+	<%= f.submit "Anfrage Speichern" %>
+</div>
+<% end %> 

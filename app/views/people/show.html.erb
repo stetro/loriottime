@@ -1,0 +1,35 @@
+<% @title = "Personen"%> <h1><%= @person.name %></h1>
+<% if notice != nil%>
+<p id="notice" class="message">
+	<%= notice %>
+</p>
+<%end%>
+<p>
+	<b>EMail-Adresse:</b>
+	<%= @person.mail %>
+</p>
+<p>
+	<b>Telefon:</b>
+	<%= @person.phone %>
+</p>
+<p>
+	<b>Ort:</b>
+	<%= @person.city %>
+</p>
+<p>
+	<b>Adresse:</b>
+	<%= @person.address %>
+</p>
+<p>
+	<b>Weitere Informationen:</b>
+	<br/>
+	<%= @person.info %>
+</p>
+<div id="controll">
+	<%= link_to 'Bearbeiten', edit_person_path(@person) %> |
+	<%= people_back_link %>
+</div>
+<p>
+	Achtung ! Hiermit werden auch alle gestellten Anfragen von <%=@person.name%> gelöscht !
+	<%= button_to "Person Löschen", @person, :method=>:delete, :class=>:destroy %>
+</p>
