@@ -122,3 +122,7 @@ footer {
 	background-color: #B44;
 	border: 1px dashed #E00;
 }
+#logo a{
+	color:#555;
+	text-decoration:none;
+}
