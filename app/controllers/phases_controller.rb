@@ -44,6 +44,6 @@ class PhasesController < ApplicationController
   def destroy
     @phase = Phase.find(params[:id])
     @phase.destroy
-    redirect_to(phases_url,:notice => 'Phase wurde erfolgreich gelöscht.')
+    redirect_to(phases_url,:notice => 'Phase wurde erfolgreich gel&ouml;scht.')
   end
 end

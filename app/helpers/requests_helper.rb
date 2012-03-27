@@ -1,6 +1,6 @@
 module RequestsHelper
   def request_back_link
-    link_to 'Zurück zur Übersicht', requests_path
+    link_to 'Zurück zur &Uuml;bersicht', requests_path
   end
 
   def get_request_time phase,event

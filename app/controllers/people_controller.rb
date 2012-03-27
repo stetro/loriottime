@@ -43,6 +43,6 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
-    redirect_to(people_url,:notice => 'Person wurde erfolgreich gelöscht.')
+    redirect_to(people_url,:notice => 'Person wurde erfolgreich gel&ouml;scht.')
   end
 end

@@ -55,6 +55,6 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-    redirect_to(requests_url,:notice => 'Anfrage wurde erfolgreich gelöscht!')
+    redirect_to(requests_url,:notice => 'Anfrage wurde erfolgreich gel&ouml;scht!')
   end
 end

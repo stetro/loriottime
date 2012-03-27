@@ -12,7 +12,7 @@
 </div>
 <% end %> 
 <div class="field">
-	<%= f.label :person_id, "Person auswählen" %>
+	<%= f.label :person_id, "Person ausw&auml;hlen" %>
 	<br />
 	<%= get_people_selection(f, @people)%>
 </div>
@@ -31,7 +31,7 @@
 	<%= f.select :seat,1..32 ,:include_blank => 'Noch nicht reserviert'%>
 </div>
 <div class="field">
-	<%= f.label :seat_count,"Anzahl der Plätze :" %>
+	<%= f.label :seat_count,"Anzahl der Pl&auml;tze :" %>
 
 	<%= f.select :seat_count,1..32,:include_blank => 'Noch nicht reserviert' %>
 </div>
@@ -40,7 +40,7 @@
 	<%= f.check_box :payed %>
 </div>
 <div class="field">
-	<%= f.label :info ,"Weitere Informationen über diese Anfrage: "%>
+	<%= f.label :info ,"Weitere Informationen &uuml;ber diese Anfrage: "%>
 	<br />
 	<%= f.text_area :info,:rows=>5 %>
 </div>
