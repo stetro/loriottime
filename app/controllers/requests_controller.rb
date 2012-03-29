@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   # GET /requests
   def index
-    @requests = Request.page(params[:page]).per(20)
+    @requests = Request.order("updated_at desc").page(params[:page]).per(20)
   end
 
   # GET /requests/1

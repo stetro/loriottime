@@ -36,6 +36,7 @@
 	</tr>
 	<% end %>
 </table>
+<%= paginate @people, :window => 2 %>
 <% end %>
 <br />
 <%= image_tag "back.jpg",:size =>"10x10"%> 
