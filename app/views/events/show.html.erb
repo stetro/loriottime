@@ -11,7 +11,7 @@
 	<%= @event.info %>
 </p>
 <p>
-	<%= button_to "Auftritt L&ouml;schen",event_path(@event),:method=>:delete,:class=>:destroy%>
+	<%= button_to raw("Auftritt L&ouml;schen"),event_path(@event),:method=>:delete,:class=>:destroy%>
 </p>
 <div id="controll">
 	<%= link_to 'Bearbeiten', edit_event_path(@event) %> |

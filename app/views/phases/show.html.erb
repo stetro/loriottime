@@ -7,7 +7,7 @@
 
 <p>
 	Achtung ! Hiermit werden auch alle beinhaltenden Auftritte gel&ouml;scht ! (Anfragen bleiben bestehen)
-	<%=button_to "Phase L&ouml;schen",@phase,:method=>:delete,:class=>:destroy	%>
+	<%=button_to raw("Phase L&ouml;schen"),@phase,:method=>:delete,:class=>:destroy	%>
 </p>
 <div id="controll">
 	<%= link_to 'Bearbeiten', edit_phase_path(@phase) %> |

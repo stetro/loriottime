@@ -29,7 +29,7 @@
 	<%= link_to 'Bearbeiten', edit_person_path(@person) %> |
 	<%= people_back_link %>
 </div>
-<p>
-	Achtung ! Hiermit werden auch alle gestellten Anfragen von <%=@person.name%> gel&ouml;scht !
-	<%= button_to "Person L&ouml;schen", @person, :method=>:delete, :class=>:destroy %>
+<p><div class="message" id="error_explanation">
+	Hiermit werden auch alle gestellten Anfragen von <%=@person.name%> gel&ouml;scht !<br/>
+	<%= button_to raw("Person L&ouml;schen"), @person, :method=>:delete, :class=>:destroy %></div>
 </p>

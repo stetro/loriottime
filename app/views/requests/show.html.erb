@@ -31,7 +31,7 @@
 </p>
 
 <p>
-  <b>Pl&auml;tze reserviert:</b> 
+  <b>Pl&auml;tze reserviert:"</b> 
   <%= @request.seat_count %>
 </p>
 
@@ -53,6 +53,6 @@
 
 
 <p>
-	<%= button_to "Anfrage L&ouml;schen", @request, :method=>:delete, :class=>:destroy %>
+	<%= button_to raw("Anfrage L&ouml;schen"), @request, :method=>:delete, :class=>:destroy %>
 </p>
 
