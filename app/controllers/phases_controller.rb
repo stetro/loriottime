@@ -1,7 +1,7 @@
 class PhasesController < ApplicationController
   # GET /phases
   def index
-    @phases = Phase.all
+    @phases = Phase.page(params[:page]).per(20)
   end
 
   # GET /phases/1

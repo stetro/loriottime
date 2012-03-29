@@ -4,7 +4,7 @@
 <%else%>
 <table>
   <tr>
-    <th>Status</th>
+    <th>&nbsp;</th>
     <th>Person</th>
 
     <th>Auftritt / Phase</th>
@@ -16,7 +16,7 @@
 
 <% @requests.each do |request| %>
   <tr>
-    <td></td>
+    <td><%= get_request_status request.event_id%></td>
     <td><%= person_name request.person_id %></td>
     <td><%= get_event_time request.phase_id , request.event_id %></td>
     <td><%= request.seat_count %></td>

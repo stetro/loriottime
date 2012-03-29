@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   # GET /people
   def index
-    @people = Person.all
+    @people = Person.page(params[:page]).per(20)
   end
 
   # GET /people/1

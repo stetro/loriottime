@@ -10,4 +10,12 @@ module RequestsHelper
       return "nicht bezahlt"
     end
   end
+  
+  def get_request_status event_id
+    if event_id != nil  
+      return image_tag "icons/reserved.png",{:width=>20,:alt => "Reserviert !"}
+    else 
+      return image_tag "icons/not_reserved.png",{:width=>20,:alt => "Nicht Reserviert !"}
+    end
+  end
 end
